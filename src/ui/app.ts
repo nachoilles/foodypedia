@@ -45,7 +45,10 @@ const appCss = `
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: var(--def-fs, 1.2rem)
+    font-size: var(--def-fs, 1.2rem);
+
+    scrollbar-color: var(--def-color, green) transparent;
+    scrollbar-width: thin;
 }
 
 html,

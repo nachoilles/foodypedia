@@ -345,8 +345,6 @@ const ingredientFiltersCss = `
 
 #new-ingredient-unit {
     color: var(--low-color, #888);
-    scrollbar-color: var(--def-color, green) transparent;
-    scrollbar-width: thin;
 }
  
 #new-ingredient-unit option {
@@ -357,6 +355,35 @@ const ingredientFiltersCss = `
 #new-ingredient-unit optgroup {
     background-color: var(--bg-color, black);
     color: var(--low-color, #888);
+}
+
+/* Scrollbar track */
+#new-ingredient-unit::-webkit-scrollbar {
+    color: transparent;
+    width: 8px;
+}
+
+/* Scrollbar background */
+#new-ingredient-unit::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 8px;
+}
+
+/* Scrollbar thumb */
+#new-ingredient-unit::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 8px;
+}
+
+/* Hover effect */
+#new-ingredient-unit::-webkit-scrollbar-thumb:hover {
+    background: var(--def-color, green);
+}
+
+/* Firefox scrollbar styling */
+#new-ingredient-unit {
+    scrollbar-width: thin;
+    scrollbar-color: var(--def-color, green) transparent;
 }
 `
 
