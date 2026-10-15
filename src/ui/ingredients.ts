@@ -1,6 +1,6 @@
 import { Module } from "../core/module.js";
 import { getUnitsFor, isQuantityUnit, isVolumeUnit, isWeightUnit, quantityUnits, unitFactors, volumeUnits, weightUnits } from "../core/units.js";
-import { getState, saveState } from "../db/db.js";
+import { saveState } from "../db/db.js";
 import { IdManager, isUserId } from "../db/id-manager.js";
 
 
@@ -350,6 +350,11 @@ const ingredientFiltersCss = `
 #new-ingredient-unit option {
     background-color: var(--bg-color, black);
     color: var(--def-color, green);
+}
+
+#new-ingredient-unit optgroup {
+    background-color: var(--bg-color, black);
+    color: var(--low-color, #888);
 }
 `
 
