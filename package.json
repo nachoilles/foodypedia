@@ -1,0 +1,13 @@
+{
+  "name": "foodypedia",
+  "version": "1.0.0",
+  "description": "Recipe book / meal organizer app",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc"
+  }
+}

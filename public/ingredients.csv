@@ -1,0 +1,423 @@
+name,defaultunit
+tomato,unit
+cherry tomatoes,g
+potato,unit
+sweet potato,unit
+red onion,unit
+yellow onion,unit
+white onion,unit
+shallot,unit
+garlic,unit
+garlic clove,unit
+carrot,unit
+bell pepper,unit
+red bell pepper,unit
+green bell pepper,unit
+yellow bell pepper,unit
+chilli pepper,unit
+jalapeño,unit
+cucumber,unit
+courgette,unit
+aubergine,unit
+mushrooms,g
+button mushrooms,g
+portobello mushroom,unit
+lettuce,unit
+romaine lettuce,unit
+spinach,g
+kale,g
+cabbage,unit
+red cabbage,unit
+cauliflower,unit
+broccoli,unit
+celery,unit
+leek,unit
+asparagus,g
+green beans,g
+peas,g
+sweetcorn,g
+corn on the cob,unit
+avocado,unit
+lemon,unit
+lime,unit
+orange,unit
+apple,unit
+pear,unit
+banana,unit
+strawberries,g
+blueberries,g
+raspberries,g
+blackberries,g
+grapes,g
+peach,unit
+nectarine,unit
+plum,unit
+apricot,unit
+mango,unit
+pineapple,unit
+watermelon,unit
+melon,unit
+kiwi,unit
+pomegranate,unit
+fresh parsley,g
+fresh coriander,g
+fresh basil,g
+fresh mint,g
+fresh rosemary,g
+fresh thyme,g
+fresh dill,g
+fresh chives,g
+fresh oregano,g
+fresh sage,g
+fresh ginger,g
+fresh turmeric,g
+egg,unit
+chicken breast,g
+chicken thigh,unit
+chicken drumstick,unit
+whole chicken,unit
+turkey breast,g
+turkey mince,g
+duck breast,unit
+beef mince,g
+beef steak,g
+stewing beef,g
+beef brisket,g
+beef short ribs,g
+pork mince,g
+pork chop,unit
+pork loin,g
+pork belly,g
+pork shoulder,g
+bacon,g
+ham,g
+cooked ham,g
+serrano ham,g
+chorizo,g
+sausage,unit
+black pudding,g
+lamb chop,unit
+lamb mince,g
+lamb shoulder,g
+veal,g
+venison,g
+salmon fillet,unit
+smoked salmon,g
+cod fillet,unit
+haddock fillet,unit
+hake fillet,unit
+sea bass fillet,unit
+sea bream,unit
+tuna steak,unit
+canned tuna,g
+sardines,g
+anchovies,g
+prawns,g
+king prawns,g
+mussels,kg
+clams,g
+squid,g
+octopus,g
+scallops,unit
+crab meat,g
+lobster,unit
+smoked mackerel,g
+tofu,g
+firm tofu,g
+silken tofu,g
+tempeh,g
+seitan,g
+milk,ml
+whole milk,ml
+semi-skimmed milk,ml
+skimmed milk,ml
+oat milk,ml
+soy milk,ml
+almond milk,ml
+coconut milk,ml
+cream,ml
+double cream,ml
+single cream,ml
+crème fraîche,g
+sour cream,g
+natural yogurt,g
+greek yogurt,g
+skyr,g
+butter,g
+unsalted butter,g
+salted butter,g
+ghee,g
+cream cheese,g
+cheddar,g
+parmesan,g
+pecorino,g
+mozzarella,g
+fresh mozzarella,g
+feta,g
+ricotta,g
+mascarpone,g
+goat cheese,g
+blue cheese,g
+brie,g
+camembert,g
+halloumi,g
+gruyère,g
+emmental,g
+gouda,g
+cottage cheese,g
+quark,g
+plain flour,g
+self-raising flour,g
+bread flour,g
+wholemeal flour,g
+rye flour,g
+cornflour,g
+almond flour,g
+coconut flour,g
+rice flour,g
+chickpea flour,g
+polenta,g
+semolina,g
+breadcrumbs,g
+panko breadcrumbs,g
+white rice,g
+brown rice,g
+basmati rice,g
+jasmine rice,g
+arborio rice,g
+paella rice,g
+wild rice,g
+risotto rice,g
+pasta,g
+spaghetti,g
+linguine,g
+fettuccine,g
+penne,g
+fusilli,g
+rigatoni,g
+macaroni,g
+lasagne sheets,g
+cannelloni,g
+orzo,g
+egg noodles,g
+rice noodles,g
+udon noodles,g
+soba noodles,g
+couscous,g
+pearl couscous,g
+quinoa,g
+bulgur wheat,g
+bulgur,g
+pearl barley,g
+barley,g
+oats,g
+rolled oats,g
+porridge oats,g
+granola,g
+muesli,g
+bread,unit
+sourdough bread,unit
+baguette,unit
+ciabatta,unit
+brioche,unit
+burger bun,unit
+hot dog bun,unit
+pita bread,unit
+tortilla wrap,unit
+corn tortilla,unit
+naan bread,unit
+flatbread,unit
+puff pastry,g
+shortcrust pastry,g
+filo pastry,g
+pizza dough,g
+chickpeas,g
+red lentils,g
+green lentils,g
+brown lentils,g
+puy lentils,g
+black lentils,g
+green peas,g
+split peas,g
+black beans,g
+kidney beans,g
+cannellini beans,g
+butter beans,g
+haricot beans,g
+pinto beans,g
+edamame,g
+dried soybeans,g
+salt,g
+sea salt,g
+flaky salt,g
+black pepper,tsp
+white pepper,tsp
+paprika,tsp
+smoked paprika,tsp
+sweet paprika,tsp
+cumin,tsp
+ground coriander,tsp
+coriander seeds,tsp
+turmeric,tsp
+cinnamon,tsp
+ground ginger,tsp
+nutmeg,tsp
+cloves,tsp
+cardamom,tsp
+ground fennel,tsp
+fennel seeds,tsp
+mustard seeds,tsp
+chilli flakes,tsp
+cayenne pepper,tsp
+curry powder,tsp
+garam masala,tsp
+ground cumin,tsp
+dried oregano,tsp
+dried thyme,tsp
+dried rosemary,tsp
+dried basil,tsp
+dried sage,tsp
+dried mint,tsp
+herbes de provence,tsp
+italian seasoning,tsp
+bay leaf,unit
+saffron,g
+vanilla pod,unit
+mustard,tsp
+dijon mustard,tsp
+wholegrain mustard,tsp
+mayonnaise,tbsp
+ketchup,tbsp
+barbecue sauce,tbsp
+hot sauce,tsp
+soy sauce,tbsp
+dark soy sauce,tbsp
+worcestershire sauce,tsp
+fish sauce,tbsp
+oyster sauce,tbsp
+hoisin sauce,tbsp
+teriyaki sauce,tbsp
+vinegar,tbsp
+white wine vinegar,tbsp
+red wine vinegar,tbsp
+apple cider vinegar,tbsp
+balsamic vinegar,tbsp
+rice vinegar,tbsp
+olive oil,tbsp
+extra virgin olive oil,tbsp
+vegetable oil,tbsp
+sunflower oil,tbsp
+rapeseed oil,tbsp
+sesame oil,tbsp
+coconut oil,g
+chilli oil,tsp
+honey,tbsp
+maple syrup,tbsp
+golden syrup,tbsp
+agave syrup,tbsp
+molasses,g
+white sugar,g
+caster sugar,g
+granulated sugar,g
+brown sugar,g
+dark brown sugar,g
+icing sugar,g
+demerara sugar,g
+coconut sugar,g
+baking powder,tsp
+bicarbonate of soda,tsp
+active dry yeast,g
+instant yeast,g
+fresh yeast,g
+vanilla extract,tsp
+almond extract,tsp
+cocoa powder,g
+dark chocolate,g
+milk chocolate,g
+white chocolate,g
+chocolate chips,g
+chocolate chunks,g
+cacao nibs,g
+gelatine,g
+agar agar,g
+cream of tartar,tsp
+corn syrup,tbsp
+tomato purée,tbsp
+tomato paste,tbsp
+passata,ml
+chopped tomatoes,g
+whole peeled tomatoes,g
+sun-dried tomatoes,g
+tomato sauce,ml
+vegetable stock,ml
+chicken stock,ml
+beef stock,ml
+fish stock,ml
+stock cube,unit
+coconut cream,ml
+peanut butter,tbsp
+almond butter,tbsp
+tahini,tbsp
+hummus,g
+pesto,tbsp
+red curry paste,tbsp
+green curry paste,tbsp
+miso paste,tbsp
+harissa,tbsp
+kimchi,g
+sauerkraut,g
+capers,g
+green olives,g
+black olives,g
+pickled gherkins,unit
+pickled jalapeños,g
+artichoke hearts,g
+roasted red peppers,g
+almonds,g
+walnuts,g
+pecans,g
+cashews,g
+pistachios,g
+hazelnuts,g
+peanuts,g
+pine nuts,g
+brazil nuts,g
+macadamia nuts,g
+chia seeds,g
+flax seeds,g
+sesame seeds,g
+pumpkin seeds,g
+sunflower seeds,g
+poppy seeds,g
+hemp seeds,g
+desiccated coconut,g
+shredded coconut,g
+raisins,g
+sultanas,g
+dried cranberries,g
+dried apricots,g
+dates,g
+prunes,g
+figs,g
+currants,g
+dried mango,g
+dried apple,g
+almond extract,tsp
+coffee, g
+instant coffee,tsp
+espresso,ml
+black tea,ml
+green tea,ml
+red wine,ml
+white wine,ml
+cooking sherry,ml
+beer,ml
+cider,ml
+dark rum,ml
+brandy,ml
+orange juice,ml
+lemon juice,ml
+lime juice,ml
+apple juice,ml
+water,ml
+sparkling water,ml
