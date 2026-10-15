@@ -67,11 +67,8 @@ export class PlanList extends Module {
         this.#idManager = new IdManager(this.#state.planIdManager)
         this.#onShowPlan = onShowPlan
 
-        const filtersWrapper = this.root.querySelector<HTMLDivElement>("#plan-list-filters")
-        const listWrapper = this.root.querySelector<HTMLDivElement>("#plan-list-data")
-
-        if (!filtersWrapper || !listWrapper)
-            throw new Error("Error creating PlanList")
+        const filtersWrapper = this.get<HTMLDivElement>("#plan-list-filters")
+        const listWrapper = this.get<HTMLDivElement>("#plan-list-data")
 
         this.#list = listWrapper
 
@@ -405,12 +402,9 @@ export class PlanView extends Module {
         super(parent, planViewTemplate, planViewCss)
         this.#state = state
 
-        const planName = this.root.querySelector<HTMLHeadingElement>("#plan-view-name")
-        const recipeList = this.root.querySelector<HTMLDivElement>("#plan-view-recipe-list")
-        const ingredientList = this.root.querySelector<HTMLDivElement>("#plan-view-ingredient-list")
-
-        if ( !planName || !recipeList || !ingredientList)
-            throw new Error("Could not create RecipeView")
+        const planName = this.get<HTMLHeadingElement>("#plan-view-name")
+        const recipeList = this.get<HTMLDivElement>("#plan-view-recipe-list")
+        const ingredientList = this.get<HTMLDivElement>("#plan-view-ingredient-list")
 
         this.#planName = planName
         this.#recipeList = recipeList
@@ -419,10 +413,10 @@ export class PlanView extends Module {
         this.#mealInputs = Array.from(this.root.querySelectorAll<HTMLInputElement>("#plan-view-daily-wrapper input"))
 
         this.#comboboxes = meals.map((meal) => {
-            const row = this.root.querySelector<HTMLElement>(`.plan-view-daily-row:nth-child(${meals.indexOf(meal) + 1})`)
-            const input = row?.querySelector<HTMLInputElement>(".plan-view-menu-input")
-            const listbox = row?.querySelector<HTMLUListElement>(".plan-view-menu-options")
-            const removeButton = row?.querySelector<HTMLButtonElement>(".plan-view-remove-menu-button")
+            const row = this.get<HTMLElement>(`.plan-view-daily-row:nth-child(${meals.indexOf(meal) + 1})`)
+            const input = row.querySelector<HTMLInputElement>(".plan-view-menu-input")
+            const listbox = row.querySelector<HTMLUListElement>(".plan-view-menu-options")
+            const removeButton = row.querySelector<HTMLButtonElement>(".plan-view-remove-menu-button")
 
             if (!input || !listbox || !removeButton)
                 throw new Error(`Could not create ${meal} combobox`)
@@ -755,9 +749,10 @@ export class PlanView extends Module {
 
     #renderRecipes(): void {
         const plan = this.#getSelectedPlan()
-        const recipeList = this.root.querySelector<HTMLDivElement>("#plan-view-recipe-list")
 
-        if (!plan || !recipeList) return
+        if (!plan) return
+
+        const recipeList = this.get<HTMLDivElement>("#plan-view-recipe-list")
 
         const recipes = plan.daily.flatMap(day => [
             ...(day.breakfast?.recipes ?? []),
@@ -798,9 +793,10 @@ export class PlanView extends Module {
 
     #renderIngredients(): void {
         const plan = this.#getSelectedPlan()
-        const ingredientList = this.root.querySelector<HTMLDivElement>("#plan-view-ingredient-list")
 
-        if (!plan || !ingredientList) return
+        if (!plan) return
+
+        const ingredientList = this.get<HTMLDivElement>("#plan-view-ingredient-list")
 
         const rawIngredients = plan.daily.flatMap(day =>
             meals.flatMap(meal => day[meal]?.ingredients ?? [])
@@ -941,13 +937,13 @@ class PlanFilters extends Module {
 
         this.#filters = { name: "" }
 
-        const newPlanButton = this.root.querySelector<HTMLButtonElement>("#new-plan-button")
-        const newPlanPanel = this.root.querySelector<HTMLDivElement>("#new-plan-wrapper")
-        const newPlanName = this.root.querySelector<HTMLInputElement>("#new-plan-name")
-        const nameInput = this.root.querySelector<HTMLInputElement>("#plan-filter-name")
+        const newPlanButton = this.get<HTMLButtonElement>("#new-plan-button")
+        const newPlanPanel = this.get<HTMLDivElement>("#new-plan-wrapper")
+        const newPlanName = this.get<HTMLInputElement>("#new-plan-name")
+        const nameInput = this.get<HTMLInputElement>("#plan-filter-name")
         const form = this.parent.querySelector<HTMLFormElement>("#plan-list-filters-wrapper")
 
-        if (!newPlanButton || !newPlanPanel || !newPlanName || !nameInput || !form)
+        if (!form)
             throw new Error("Error creating PlanFilters")
 
         form.addEventListener("submit", async event => {
@@ -1058,11 +1054,8 @@ class PlanListItem extends Module {
         super(parent, planListItemTemplate, planListItemCss)
         this.#plan = plan
 
-        const nameInput = this.root.querySelector<HTMLInputElement>(".plan-list-item-name")
-        const removeButton = this.root.querySelector<HTMLButtonElement>(".remove-plan-button")
-
-        if (!nameInput || !removeButton)
-            throw new Error("Could not create RecipeListItem")
+        const nameInput = this.get<HTMLInputElement>(".plan-list-item-name")
+        const removeButton = this.get<HTMLButtonElement>(".remove-plan-button")
 
         nameInput.value = plan.name
         nameInput.readOnly = true

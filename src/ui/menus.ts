@@ -63,11 +63,8 @@ export class MenuList extends Module {
         this.#idManager = new IdManager(this.#state.menuIdManager)
         this.#onShowMenu = onShowMenu
 
-        const filtersWrapper = this.root.querySelector<HTMLDivElement>("#menu-list-filters")
-        const listWrapper = this.root.querySelector<HTMLDivElement>("#menu-list-data")
-
-        if (!filtersWrapper || !listWrapper)
-            throw new Error("Error creating MenuList")
+        const filtersWrapper = this.get<HTMLDivElement>("#menu-list-filters")
+        const listWrapper = this.get<HTMLDivElement>("#menu-list-data")
 
         this.#list = listWrapper
 
@@ -223,11 +220,7 @@ export class MenuView extends Module {
         super(parent, menuViewTemplate, menuViewCss)
         this.#state = state
 
-        const menuName = this.root.querySelector<HTMLHeadingElement>("#menu-view-name")
-        const menuItemListParent = this.root.querySelector<HTMLDivElement>("#menu-view-item-list")
-
-        if ( !menuName ||  !menuItemListParent)
-            throw new Error("Could not create RecipeView")
+        const menuName = this.get<HTMLHeadingElement>("#menu-view-name")
 
         this.#menuName = menuName
 
@@ -647,7 +640,7 @@ class MenuFilters extends Module {
     }
 
     renderSelectedMenuItems(): void {
-        const container = this.root.querySelector("#filter-selected-menu-items")
+        const container = this.get("#filter-selected-menu-items")
 
         if (!container) return
 
@@ -744,11 +737,8 @@ class MenuListItem extends Module {
         super(parent, menuListItemTemplate, menuListItemCss)
         this.#menu = menu
 
-        const nameInput = this.root.querySelector<HTMLInputElement>(".menu-list-item-name")
-        const removeButton = this.root.querySelector<HTMLButtonElement>(".remove-menu-button")
-
-        if (!nameInput || !removeButton)
-            throw new Error("Could not create RecipeListItem")
+        const nameInput = this.get<HTMLInputElement>(".menu-list-item-name")
+        const removeButton = this.get<HTMLButtonElement>(".remove-menu-button")
 
         nameInput.value = menu.name
         nameInput.readOnly = true
@@ -968,13 +958,13 @@ class MenuItemPicker extends Module {
         this.#onSelected = onSelected
 
         const form = this.parent.querySelector<HTMLFormElement>(".menu-item-picker")
-        const search = this.root.querySelector<HTMLInputElement>(".menu-item-picker-search")
-        const quantity = this.root.querySelector<HTMLInputElement>(".menu-item-entry-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".menu-item-entry-unit")
-        const editor = this.root.querySelector<HTMLDivElement>(".menu-item-entry-editor")
-        const cancelButton = this.root.querySelector<HTMLButtonElement>(".menu-item-entry-cancel")
+        const search = this.get<HTMLInputElement>(".menu-item-picker-search")
+        const quantity = this.get<HTMLInputElement>(".menu-item-entry-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".menu-item-entry-unit")
+        const editor = this.get<HTMLDivElement>(".menu-item-entry-editor")
+        const cancelButton = this.get<HTMLButtonElement>(".menu-item-entry-cancel")
 
-        if (!form || !search || !quantity || !unitSelect || !editor || !cancelButton)
+        if (!form)
             throw new Error("Could not create IngredientPicker")
 
         search.addEventListener("input", () => {
@@ -1027,10 +1017,7 @@ class MenuItemPicker extends Module {
     }
 
     renderOptions(search: HTMLInputElement): void {
-        const options = this.root.querySelector<HTMLDivElement>(".menu-item-options")
-
-        if (!options)
-            throw new Error("Could not render MenuItemPicker options")
+        const options = this.get<HTMLDivElement>(".menu-item-options")
 
         options.replaceChildren()
 
@@ -1060,11 +1047,11 @@ class MenuItemPicker extends Module {
     }
 
     #selectMenuItem(menuItem: Ingredient | Recipe): void {
-        const quantity = this.root.querySelector<HTMLInputElement>(".menu-item-entry-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".menu-item-entry-unit")
-        const editor = this.root.querySelector<HTMLDivElement>(".menu-item-entry-editor")
-        const search = this.root.querySelector<HTMLInputElement>(".menu-item-picker-search")
-        const options = this.root.querySelector<HTMLDivElement>(".menu-item-options")
+        const quantity = this.get<HTMLInputElement>(".menu-item-entry-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".menu-item-entry-unit")
+        const editor = this.get<HTMLDivElement>(".menu-item-entry-editor")
+        const search = this.get<HTMLInputElement>(".menu-item-picker-search")
+        const options = this.get<HTMLDivElement>(".menu-item-options")
 
         if (!quantity || !unitSelect || !editor || !search || !options) {
             throw new Error("Could not select menu item")
@@ -1223,14 +1210,10 @@ class MenuViewItemListItem extends Module {
 
         const isObsolete = !currentMenuItem || JSON.stringify(currentMenuItem) !== JSON.stringify(rawMenuItem)
 
-        const quantityInput = this.root.querySelector<HTMLInputElement>(".menu-view-item-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".menu-view-item-unit")
-        const name = this.root.querySelector<HTMLSpanElement>(".menu-view-item-name")
-        const removeButton = this.root.querySelector<HTMLButtonElement>(".menu-view-item-remove")
-
-        if (!quantityInput || !unitSelect || !name || !removeButton) {
-            throw new Error("Could not create RecipeViewIngredientListItem")
-        }
+        const quantityInput = this.get<HTMLInputElement>(".menu-view-item-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".menu-view-item-unit")
+        const name = this.get<HTMLSpanElement>(".menu-view-item-name")
+        const removeButton = this.get<HTMLButtonElement>(".menu-view-item-remove")
 
         name.textContent = menuItem.name
         if (isObsolete) name.style.textDecoration = "line-through"

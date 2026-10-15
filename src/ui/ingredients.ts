@@ -215,11 +215,8 @@ export class IngredientView extends Module {
         super(parent, ingredientViewTemplate, ingredientViewCss)
         this.#state = state
 
-        const ingredientName = this.root.querySelector<HTMLHeadingElement>("#ingredient-view-name")
-        const rationsInput = this.root.querySelector<HTMLSelectElement>("#ingredient-view-unit")
-
-        if (!rationsInput || !ingredientName)
-            throw new Error("Could not create IngredientView")
+        const ingredientName = this.get<HTMLHeadingElement>("#ingredient-view-name")
+        const rationsInput = this.get<HTMLSelectElement>("#ingredient-view-unit")
 
         this.#ingredientName = ingredientName
         this.#defaultUnit = rationsInput
@@ -494,13 +491,8 @@ class IngredientListItem extends Module {
         super(parent, ingredientListItemTemplate, ingredientListItemCss)
         this.#ingredient = ingredient
 
-        const nameInput = this.root.querySelector(".ingredient-list-item-name")
-        const removeButton = this.root.querySelector(".remove-ingredient-button")
-
-        if (
-            !(nameInput instanceof HTMLInputElement) ||
-            !(removeButton instanceof HTMLButtonElement)
-        ) throw new Error("Could not create IngredientListItem")
+        const nameInput = this.get<HTMLInputElement>(".ingredient-list-item-name")
+        const removeButton = this.get<HTMLButtonElement>(".remove-ingredient-button")
 
         nameInput.value = ingredient.name
 

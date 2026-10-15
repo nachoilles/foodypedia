@@ -271,13 +271,8 @@ export class RecipeView extends Module {
         super(parent, recipeViewTemplate, recipeViewCss)
         this.#state = state
 
-        const recipeName = this.root.querySelector<HTMLHeadingElement>("#recipe-view-name")
-        const rationsInput = this.root.querySelector<HTMLInputElement>("#recipe-view-rations")
-        const recipeIngredientListParent = this.root.querySelector<HTMLDivElement>("#recipe-view-ingredient-list")
-        const recipeInstructionListParent = this.root.querySelector<HTMLDivElement>("#recipe-view-instruction-list")
-
-        if (!rationsInput || !recipeName ||  !recipeIngredientListParent || !recipeInstructionListParent)
-            throw new Error("Could not create RecipeView")
+        const recipeName = this.get<HTMLHeadingElement>("#recipe-view-name")
+        const rationsInput = this.get<HTMLInputElement>("#recipe-view-rations")
 
         this.#recipeName = recipeName
         this.#rations = rationsInput
@@ -693,7 +688,7 @@ class RecipeFilters extends Module {
     }
 
     renderSelectedIngredients(): void {
-        const container = this.root.querySelector("#filter-selected-ingredients")
+        const container = this.get("#filter-selected-ingredients")
 
         if (!container) return
 
@@ -782,13 +777,8 @@ class RecipeListItem extends Module {
         super(parent, recipeListItemTemplate, recipeListItemCss)
         this.#recipe = recipe
 
-        const nameInput = this.root.querySelector(".recipe-list-item-name")
-        const removeButton = this.root.querySelector(".remove-recipe-button")
-
-        if (
-            !(nameInput instanceof HTMLInputElement) ||
-            !(removeButton instanceof HTMLButtonElement)
-        ) throw new Error("Could not create RecipeListItem")
+        const nameInput = this.get<HTMLInputElement>(".recipe-list-item-name")
+        const removeButton = this.get<HTMLButtonElement>(".remove-recipe-button")
 
         nameInput.value = recipe.name
         nameInput.readOnly = true
@@ -1008,13 +998,13 @@ class IngredientPicker extends Module {
         this.#onSelected = onSelected
 
         const form = this.parent.querySelector<HTMLFormElement>(".recipe-ingredient-picker")
-        const search = this.root.querySelector<HTMLInputElement>(".ingredient-picker-search")
-        const quantity = this.root.querySelector<HTMLInputElement>(".ingredient-entry-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".ingredient-entry-unit")
-        const editor = this.root.querySelector<HTMLDivElement>(".ingredient-entry-editor")
-        const cancelButton = this.root.querySelector<HTMLButtonElement>(".ingredient-entry-cancel")
+        const search = this.get<HTMLInputElement>(".ingredient-picker-search")
+        const quantity = this.get<HTMLInputElement>(".ingredient-entry-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".ingredient-entry-unit")
+        const editor = this.get<HTMLDivElement>(".ingredient-entry-editor")
+        const cancelButton = this.get<HTMLButtonElement>(".ingredient-entry-cancel")
 
-        if (!form || !search || !quantity || !unitSelect || !editor || !cancelButton)
+        if (!form)
             throw new Error("Could not create IngredientPicker")
 
         search.addEventListener("input", () => {
@@ -1056,10 +1046,7 @@ class IngredientPicker extends Module {
     }
 
     renderOptions(search: HTMLInputElement): void {
-        const options = this.root.querySelector<HTMLDivElement>(".recipe-ingredient-options")
-
-        if (!options)
-            throw new Error("Could not render IngredientPicker options")
+        const options = this.get<HTMLDivElement>(".recipe-ingredient-options")
 
         options.replaceChildren()
 
@@ -1084,15 +1071,11 @@ class IngredientPicker extends Module {
     }
 
     #selectIngredient(ingredient: Ingredient): void {
-        const quantity = this.root.querySelector<HTMLInputElement>(".ingredient-entry-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".ingredient-entry-unit")
-        const editor = this.root.querySelector<HTMLDivElement>(".ingredient-entry-editor")
-        const search = this.root.querySelector<HTMLInputElement>(".ingredient-picker-search")
-        const options = this.root.querySelector<HTMLDivElement>(".recipe-ingredient-options")
-
-        if (!quantity || !unitSelect || !editor || !search || !options) {
-            throw new Error("Could not select ingredient")
-        }
+        const quantity = this.get<HTMLInputElement>(".ingredient-entry-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".ingredient-entry-unit")
+        const editor = this.get<HTMLDivElement>(".ingredient-entry-editor")
+        const search = this.get<HTMLInputElement>(".ingredient-picker-search")
+        const options = this.get<HTMLDivElement>(".recipe-ingredient-options")
 
         this.#selectedIngredient = ingredient
 
@@ -1167,12 +1150,9 @@ class InstructionEditor extends Module {
     ) {
         super(parent, instructionEditorTemplate, instructionEditorCss)
 
-        const input = this.root.querySelector<HTMLTextAreaElement>(".instruction-editor-input")
-        const addButton = this.root.querySelector<HTMLButtonElement>(".instruction-editor-add")
-        const cancelButton = this.root.querySelector<HTMLButtonElement>(".instruction-editor-cancel")
-
-        if (!input || !addButton || !cancelButton)
-            throw new Error("Could not create InstructionEditor")
+        const input = this.get<HTMLTextAreaElement>(".instruction-editor-input")
+        const addButton = this.get<HTMLButtonElement>(".instruction-editor-add")
+        const cancelButton = this.get<HTMLButtonElement>(".instruction-editor-cancel")
 
         addButton.addEventListener("click", () => {
             const instruction = input.value.trim()
@@ -1299,14 +1279,10 @@ class RecipeViewIngredientListItem extends Module {
 
         const isObsolete = !currentIngredient || JSON.stringify(currentIngredient) !== JSON.stringify(rawIngredient)
 
-        const quantityInput = this.root.querySelector<HTMLInputElement>(".recipe-view-ingredient-quantity")
-        const unitSelect = this.root.querySelector<HTMLSelectElement>(".recipe-view-ingredient-unit")
-        const name = this.root.querySelector<HTMLSpanElement>(".recipe-view-ingredient-name")
-        const removeButton = this.root.querySelector<HTMLButtonElement>(".recipe-view-ingredient-remove")
-
-        if (!quantityInput || !unitSelect || !name || !removeButton) {
-            throw new Error("Could not create RecipeViewIngredientListItem")
-        }
+        const quantityInput = this.get<HTMLInputElement>(".recipe-view-ingredient-quantity")
+        const unitSelect = this.get<HTMLSelectElement>(".recipe-view-ingredient-unit")
+        const name = this.get<HTMLSpanElement>(".recipe-view-ingredient-name")
+        const removeButton = this.get<HTMLButtonElement>(".recipe-view-ingredient-remove")
 
         name.textContent = ingredient.name
         if (isObsolete) name.style.textDecoration = "line-through"
@@ -1396,12 +1372,8 @@ class RecipeViewInstructionListItem extends Module {
     ) {
         super(parent, recipeViewInstructionListItemTemplate, recipeViewInstructionListItemCss)
 
-        const input = this.root.querySelector<HTMLTextAreaElement>(".recipe-view-instruction-input")
-        const removeButton = this.root.querySelector<HTMLButtonElement>(".recipe-view-instruction-remove")
-
-        if (!input || !removeButton) {
-            throw new Error("Could not create RecipeViewInstructionListItem")
-        }
+        const input = this.get<HTMLTextAreaElement>(".recipe-view-instruction-input")
+        const removeButton = this.get<HTMLButtonElement>(".recipe-view-instruction-remove")
 
         input.value = instruction
         input.setAttribute("aria-label", `Instruction ${index + 1}`)
