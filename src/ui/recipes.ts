@@ -426,6 +426,7 @@ const recipeFiltersTemplate = `
     </div>
         
     <div id="filter-ingredients-top-wrapper">
+        <button type="button" id="recipe-list-toggle-advanced">FILTER</button>
         <input
             id="filter-ingredient-search"
             name="ingredient-name"
@@ -434,7 +435,6 @@ const recipeFiltersTemplate = `
             autocomplete="off"
             spellcheck="false"
         />
-        <button type="button" id="recipe-list-toggle-advanced">FILTER</button>
     </div>
 
     <div id="recipe-list-advanced-filters-panel">
@@ -485,7 +485,8 @@ const recipeFiltersCss = `
 
 #filter-ingredients-top-wrapper {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 #filter-ingredient-search {

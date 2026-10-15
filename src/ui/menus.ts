@@ -346,6 +346,7 @@ const menuFiltersTemplate = `
     </div>
         
     <div id="filter-menu-items-top-wrapper">
+        <button type="button" id="menu-list-toggle-advanced">FILTER</button>
         <input
             id="filter-menu-item-search"
             name="menu-item-name"
@@ -354,7 +355,6 @@ const menuFiltersTemplate = `
             autocomplete="off"
             spellcheck="false"
         />
-        <button type="button" id="menu-list-toggle-advanced">FILTER</button>
     </div>
 
     <div id="menu-list-advanced-filters-panel">
@@ -406,7 +406,8 @@ const menuFiltersCss = `
 
 #filter-menu-items-top-wrapper {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 #filter-menu-item-search {

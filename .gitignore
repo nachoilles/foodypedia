@@ -1,3 +1,5 @@
 build/
 server.js
 node_modules/
+.vercel
+.env*

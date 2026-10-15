@@ -1,5 +1,5 @@
-import fs from "node"
-import path from "node"
+import fs from "node:fs"
+import path from "node:path"
 
 const buildDir = path.resolve("build")
 const publicDir = path.resolve("public")
