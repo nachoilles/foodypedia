@@ -345,6 +345,8 @@ const ingredientFiltersCss = `
 
 #new-ingredient-unit {
     color: var(--low-color, #888);
+    scrollbar-color: var(--def-color, green) transparent;
+    scrollbar-width: thin;
 }
  
 #new-ingredient-unit option {
