@@ -8,7 +8,7 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc && node scripts/prepare-public.js"
   },
   "devDependencies": {
     "typescript": "^7.0.2"
